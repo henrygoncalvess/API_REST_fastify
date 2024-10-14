@@ -29,8 +29,9 @@ git clone https://github.com/henrygoncalvess/API_RESTful.git
 ### Pré-requisitos
 Na criação da API, utilizaremos o framework **Express**. Para a instalação, é necessário que você possua as seguintes ferramentas:
 
-Node.js v20.16.0 
-npm v10.8.2
+- [Node.js](https://nodejs.org/pt)
+
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 ### Etapas
 
