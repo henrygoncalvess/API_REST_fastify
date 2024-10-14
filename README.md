@@ -20,6 +20,12 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 
 ### Clonando Repositório
 
+No Terminal, certifique de que você está na pasta onde ficará o repositório
+``` bash
+# pasta/do/repo/clonado
+git clone https://github.com/henrygoncalvess/API_RESTful.git
+```
+
 ### Pré-requisitos
 
 ### Etapas
