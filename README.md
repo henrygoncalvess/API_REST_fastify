@@ -35,6 +35,19 @@ Na criação da API, utilizaremos o framework **Express**. Para a instalação, 
 
 ### Etapas
 
+com o **Node.js** e **npm** instalados, na pasta do repositório, inicie um package.json:
+
+``` bash
+# pasta/do/repo/clonado
+npm init -y
+```
+em seguida, vamos instalar o framework **Express** para a criação da API e o **Cors**, que é usado para habilitar solicitações **HTTP** e reconhecer o formato **JSON** no corpo das requisições.
+
+``` bash
+# pasta/do/repo/clonado
+npm install express@4.21.1 cors@2.8.5
+```
+
 ## Instrução de uso
 
 ## API Endpoints
