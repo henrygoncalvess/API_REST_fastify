@@ -2,25 +2,23 @@ const database = require('../models/connection.js')
 
 class UserController{
     index(req, res){
-        const [ response ] = database
+        const response = database
 
         res.json(response)
     }
 
     new(req, res){
-        database[0].push(req.body)
-
-        console.log(database[0]);
+        database.push(req.body)
 
         res.sendStatus(201)
     }
 
     update(req, res){
-        const { cliente, total } = req.body
+        const currentUser = req.body
 
-        database[0].forEach(element => {
-            if (element.cliente === cliente){
-                element.total = total
+        database.forEach(element => {
+            if (element.username === currentUser.username){
+                element.username = currentUser.newUsername
             }
         })
 
@@ -28,17 +26,15 @@ class UserController{
     }
 
     remove(req, res){
-        const { cliente } = req.body
+        const { deleteUser } = req.body
 
-        console.log(database[0]);
+        console.log(database);
 
-        database[0].forEach((element, pos) => {
-            if (element.cliente === cliente){
-                database[0].splice(pos, 1)
+        database.forEach((element, pos) => {
+            if (element.username === deleteUser){
+                database.splice(pos, 1)
             }
         })
-
-        console.log(database[0]);
 
         res.sendStatus(200)
     }

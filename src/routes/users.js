@@ -18,12 +18,12 @@ const express = require('express')
 const rota = express.Router()
 const UserController = require('../controllers/UserController.js')
 
-rota.get('/cliente', UserController.index)
+rota.get('/user', UserController.index)
 
-rota.post('/cliente', UserController.new)
+rota.post('/new/user', UserController.new)
 
-rota.put('/cliente', UserController.update)
+rota.put('/update/user', UserController.update)
 
-rota.delete('/cliente', UserController.remove)
+rota.delete('/delete/user', UserController.remove)
 
 module.exports = rota

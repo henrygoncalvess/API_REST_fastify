@@ -25,8 +25,9 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 ### Clonando Repositório
 
 No Terminal, certifique de que você está na pasta onde ficará o repositório
+
+```pasta\do\repo\clonado```
 ``` bash
-# pasta\do\repo\clonado
 git clone https://github.com/henrygoncalvess/API_RESTful.git
 ```
 
@@ -43,16 +44,14 @@ E para fazer as requisições, utilizaremos a plataforma **Postman**.
 
 ### Etapas
 
-com o **Node.js** e **npm** instalados, na pasta do repositório, inicie um package.json:
-
+```pasta\do\repo\clonado\API_RESTful```
 ``` bash
-# pasta\do\repo\clonado\API_RESTful
 npm init -y
 ```
 em seguida, vamos instalar o framework **Express** para a criação da API e o **Cors**, que é usado para habilitar solicitações **HTTP** e reconhecer o formato **JSON** no corpo das requisições.
 
+```pasta\do\repo\clonado\API_RESTful```
 ``` bash
-# pasta\do\repo\clonado\API_RESTful
 npm install express@4.21.1 cors@2.8.5
 ```
 
@@ -61,8 +60,9 @@ npm install express@4.21.1 cors@2.8.5
 Antes de fazer as requisições para a API com o Postman, precisamos iniciar o nosso servidor local.
 
 no Terminal, e na pasta que contém o arquivo "**server.js**":
+
+```...\API_RESTful\src```
 ``` bash
-#...\API_RESTful\src
 node server.js
 ```
 
@@ -78,24 +78,34 @@ Rota | Descrição
 ---|---|
 ***GET*** ``` http://localhost:3000/api/user ```| Lista todas as informações dos usuários - [JSON](#get)
 ***POST*** ``` http://localhost:3000/api/new/user ```| Adiciona um novo usuário - [JSON](#get)
-***PUT*** ``` http://localhost:3000/api/user ```| Altera a informação do usuário requisitado - [JSON](#get)
-***DELETE*** ``` http://localhost:3000/api/user ```| Deleta um usuário e todas as suas informações - [JSON](#get)
+***PUT*** ``` http://localhost:3000/api/update/user ```| Altera/Atualiza o nome do usuário requisitado - [JSON](#get)
+***DELETE*** ``` http://localhost:3000/api/delete/user ```| Deleta um usuário e todas as suas informações - [JSON](#get)
 
 ---
 
-### GET
-***Response***
+### GET - ***Response***
+
 ``` json
-{
-  "username": "pedro",
-  "password": "111111"
-}
+[
+    {
+        "username": "pedro",
+        "password": "111111"
+    },
+    {
+        "username": "maria",
+        "password": "22221"
+    },
+    {
+        "username": "marcelo",
+        "password": "321321"
+    }
+]
 ```
 
 ---
 
-### POST
-***Request***
+### POST - ***Request***
+
 ``` json
 {
   "username": "newUsername",
@@ -103,43 +113,40 @@ Rota | Descrição
 }
 ```
 
-***Response***
+***Response*** - status
 
-status
 ``` http
 201 CREATED
 ```
 
 ---
 
-### PUT
-***Request***
+### PUT - ***Request***
+
 ``` json
 {
-  "username": "pedro-junior",
-  "password": "121212"
+  "username": "pedro",
+  "newUsername": "pedro-junior"
 }
 ```
 
-***Response***
+***Response*** - status
 
-status
 ``` http
 200 OK
 ```
 
 ---
 
-### DELETE
-***Request***
+### DELETE - ***Request***
+
 ``` json
 {
-  "username": "pedro-junior"
+  "deleteUser": "pedro-junior"
 }
 ```
-***Response***
+***Response*** - status
 
-status
 ``` http
 200 OK
 ```
