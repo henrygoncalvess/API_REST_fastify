@@ -34,14 +34,15 @@ git clone https://github.com/henrygoncalvess/API_RESTful.git
 <br>
 
 ### Pré-requisitos
-Na criação da API, foi utilizado o framework **Express**.  
-Para a instalação do express, é necessário que você possua as seguintes ferramentas:
+Para a instalação dos frameworks, middlewares e dependências que possibilitaram a criação da API  
+é necessário que você possua as seguintes ferramentas:
 
-- [Node.js](https://nodejs.org/pt)
+- **Node.js** - [Tutorial de instalação](https://nodejs.org/pt)
 
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- **npm** - [Tutorial de instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-- [Postman](https://www.postman.com/downloads/) - Para testar a API fazendo requisições
+Para fazer requisições e testar as respostas da API:
+- **Postman** - [Tutorial de instalação](https://www.postman.com/downloads/)
 
 > [!tip]
 > Também é possível fazer requisições pela linha de comando.  
@@ -51,14 +52,14 @@ Para a instalação do express, é necessário que você possua as seguintes fer
 
 ### Etapas
 
-comece criando seu próprio package.json
+comece criando seu projeto Node.js
 
 `pasta\do\repo\clonado\API_RESTful`
 ``` bash
-npm init -y
+npm init
 ```
-em seguida, vamos instalar o framework **Express** e o middleware **Cors**,  
-que está sendo utilizado para habilitar solicitações **HTTP** e reconhecer o formato **JSON** no corpo das requisições.
+em seguida, instale o framework **Express** e o middleware **Cors**,  
+que é utilizado para habilitar solicitações **HTTP** e reconhecer o formato **JSON** no corpo das requisições.
 
 `pasta\do\repo\clonado\API_RESTful`
 ``` bash
@@ -69,8 +70,7 @@ npm install express@4.21.1 cors@2.8.5
 
 ## Instrução de uso
 
-Antes de fazer as requisições para a API com o Postman (ou pela linha de comando),  
-precisamos iniciar o nosso servidor local.
+Antes de fazer requisições para a API, inicie o servidor local.
 
 no Terminal, dentro da pasta que contém o arquivo "**server.js**":
 
@@ -83,15 +83,15 @@ node server.js
 
 ## API Endpoints
 
-com o servidor rodando, podemos abrir o postman e testar as respostas da API fazendo requisições  
-aos **endpoints** listados abaixo:
+No Postman *ou na linha de comando*  
+teste as respostas da API seguindo os **endpoints** abaixo.
 
 > [!tip]
 > acesse este link, caso não saiba utilizar o Postman para fazer requisições [Postman](https://learning.postman.com/docs/introduction/overview/)  
 > acesse este link, caso não saiba fazer requisições pela linha de comando [Clique aqui](https://www.campuscode.com.br/conteudos/comandos-curl-para-testar-requisicoes-api)
 
 > [!note]
-> Não utilizei nenhum banco de dados, as respostas das requisições são apenas dados fictícios de um array,  
+> As respostas da API são apenas dados fictícios de um array, sem conexão com banco de dados,  
 > o objetivo é apenas entender o funcionamento da API e aplicar os princípios **REST**
 
 <br>
@@ -100,8 +100,8 @@ Rota | Descrição
 ---|:---:|
 ***GET*** ` http://localhost:3000/api/user `| Lista todas as informações dos usuários - [ver JSON](#get---response)
 ***POST*** ` http://localhost:3000/api/new/user `| Adiciona um novo usuário - [ver JSON](#post---request)
-***PUT*** ` http://localhost:3000/api/update/user `| Altera/Atualiza o nome do usuário requisitado - [ver JSON](#put---request)
-***DELETE*** ` http://localhost:3000/api/delete/user `| Deleta um usuário e todas as suas informações - [ver JSON](#delete---request)
+***PUT*** ` http://localhost:3000/api/update/user `| Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
+***DELETE*** ` http://localhost:3000/api/delete/user `| Deleta um usuário - [ver JSON](#delete---request)
 
 <br>
 
