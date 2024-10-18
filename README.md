@@ -58,8 +58,7 @@ comece criando seu projeto Node.js
 ``` bash
 npm init
 ```
-em seguida, instale o framework **Express** e o middleware **Cors**,  
-que é utilizado para habilitar solicitações **HTTP** e reconhecer o formato **JSON** no corpo das requisições.
+em seguida, instale o framework **Express** e o middleware **Cors**.
 
 `pasta\do\repo\clonado\API_RESTful`
 ``` bash
