@@ -27,7 +27,7 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 ### Clonando Repositório
 No Terminal, certifique de que você está na pasta onde vai ficar o repositório
 
-`pasta\do\repo\clonado`
+`repositorios\clonados`
 ``` bash
 git clone https://github.com/henrygoncalvess/API_RESTful.git
 ```
@@ -54,13 +54,13 @@ Para fazer requisições e testar as respostas da API:
 
 comece criando seu projeto Node.js
 
-`pasta\do\repo\clonado\API_RESTful`
+`repositorios\clonados\API_RESTful`
 ``` bash
 npm init
 ```
 em seguida, instale o framework **Express** e o middleware **Cors**.
 
-`pasta\do\repo\clonado\API_RESTful`
+`repositorios\clonados\API_RESTful`
 ``` bash
 npm install express@4.21.1 cors@2.8.5
 ```
@@ -73,7 +73,7 @@ Antes de fazer requisições para a API, inicie o servidor local.
 
 no Terminal, dentro da pasta que contém o arquivo "**server.js**":
 
-`pasta\do\repo\clonado\API_RESTful\src`
+`repositorios\clonados\API_RESTful\src`
 ``` bash
 node server.js
 ```
@@ -96,11 +96,11 @@ teste as respostas da API seguindo os **endpoints** abaixo.
 <br>
 
 Rota | Descrição
----|:---:|
-***GET*** ` http://localhost:3000/api/user `| Lista todas as informações dos usuários - [ver JSON](#get---response)
-***POST*** ` http://localhost:3000/api/new/user `| Adiciona um novo usuário - [ver JSON](#post---request)
-***PUT*** ` http://localhost:3000/api/update/user `| Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
-***DELETE*** ` http://localhost:3000/api/delete/user `| Deleta um usuário - [ver JSON](#delete---request)
+--- | :---:
+***GET*** ` http://localhost:3000/api/user ` | Lista todas as informações dos usuários - [ver JSON](#get---response)
+***POST*** ` http://localhost:3000/api/new/user ` | Adiciona um novo usuário - [ver JSON](#post---request)
+***PUT*** ` http://localhost:3000/api/update/user ` | Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
+***DELETE*** ` http://localhost:3000/api/delete/user ` | Deleta um usuário - [ver JSON](#delete---request)
 
 <br>
 
