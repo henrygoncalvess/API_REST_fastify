@@ -52,13 +52,13 @@ Para fazer requisições e testar as respostas da API:
 
 ### Etapas
 
-comece criando seu projeto Node.js
+#### 1. comece criando seu projeto Node.js
 
 `repositorios\clonados\API_RESTful`
 ``` bash
 npm init
 ```
-em seguida, instale o framework **Express** e o middleware **Cors**.
+#### 2. em seguida, instale o framework **Express** e o middleware **Cors**.
 
 `repositorios\clonados\API_RESTful`
 ``` bash
