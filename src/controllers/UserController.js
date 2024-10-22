@@ -1,40 +1,26 @@
-const database = require('../models/connection.js')
+const UserModel = require('../models/UserModel.js')
 
 class UserController{
     index(req, res){
-        const response = database
+        const response = UserModel.findAll()
 
         res.json(response)
     }
 
     new(req, res){
-        database.push(req.body)
+        UserModel.create(req.body)
 
         res.sendStatus(201)
     }
 
     update(req, res){
-        const currentUser = req.body
-
-        database.forEach(element => {
-            if (element.username === currentUser.username){
-                element.username = currentUser.newUsername
-            }
-        })
+        UserModel.update(req.body)
 
         res.sendStatus(200)
     }
 
     remove(req, res){
-        const { deleteUser } = req.body
-
-        console.log(database);
-
-        database.forEach((element, pos) => {
-            if (element.username === deleteUser){
-                database.splice(pos, 1)
-            }
-        })
+        UserModel.delete(req.body)
 
         res.sendStatus(200)
     }

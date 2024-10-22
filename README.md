@@ -1,6 +1,6 @@
 # API REST
 
-<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00"> <img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"> <img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"> <img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"> <img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"> <img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray">
+<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge"> <img src="https://img.shields.io/badge/express-4.21.1-royalblue?style=for-the-badge&logoColor=black"> <img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black"> <img src="https://img.shields.io/badge/node-20.16.0-43853D?style=for-the-badge&logo=node.js"> <img src="https://img.shields.io/badge/npm-10.8.2-firebrick?style=for-the-badge&logo=npm&logoColor=firebrick"> <img src="https://img.shields.io/badge/postman-11.16.0-orange?style=for-the-badge&logo=postman">
 
 Simples API feita com **Node.js** e **express** com aplicação de boas práticas para transferência de dados. O objetivo é apenas colocar meus conhecimentos em prática, para entender e utilizar os conceitos REST da melhor maneira possível.
 
@@ -22,12 +22,29 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 
 <br>
 
+### Estrutura de pastas
+
+├──**API_RESTful/**  
+│&nbsp; &nbsp; &nbsp;├──[src/](src)  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[config/](src/config) _`conexão com banco de dados`_  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[db.js](src/config/db.js)  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[controllers/](src/controllers) _`lógica de negócio`_  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[UserController.js](src/controllers/UserController.js)  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;├──[models/](src/models) _`modelos que lidam c/ banco de dados. consultas, manipulação etc.`_  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; \`- - -[UserModel.js](src/models/UserModel.js)  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp;└──[routes/](src/routes) _`rotas da API`_  
+│&nbsp; &nbsp; &nbsp;│&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\`- - -[users.js](src/routes/users.js)  
+│&nbsp; &nbsp; &nbsp; \`- - -[app.js](src/app.js) _`lógica da aplicação`_  
+│&nbsp; &nbsp; &nbsp; \`- - -[server.js](src/server.js) _`ponto de entrada da aplicação`_  
+
+<br>
+
 ## Instrução de instalação
 
 ### Clonando Repositório
 No Terminal, certifique de que você está na pasta onde vai ficar o repositório
 
-`repositorios\clonados`
+`pasta\do\repo\clonado`
 ``` bash
 git clone https://github.com/henrygoncalvess/API_RESTful.git
 ```
@@ -52,15 +69,15 @@ Para fazer requisições e testar as respostas da API:
 
 ### Etapas
 
-#### 1. comece criando seu projeto Node.js
+comece criando seu projeto Node.js
 
-`repositorios\clonados\API_RESTful`
+`pasta\do\repo\clonado\API_RESTful`
 ``` bash
 npm init
 ```
-#### 2. em seguida, instale o framework **Express** e o middleware **Cors**.
+em seguida, instale o framework **Express** e o middleware **Cors**.
 
-`repositorios\clonados\API_RESTful`
+`pasta\do\repo\clonado\API_RESTful`
 ``` bash
 npm install express@4.21.1 cors@2.8.5
 ```
@@ -73,7 +90,7 @@ Antes de fazer requisições para a API, inicie o servidor local.
 
 no Terminal, dentro da pasta que contém o arquivo "**server.js**":
 
-`repositorios\clonados\API_RESTful\src`
+`pasta\do\repo\clonado\API_RESTful\src`
 ``` bash
 node server.js
 ```
@@ -96,11 +113,11 @@ teste as respostas da API seguindo os **endpoints** abaixo.
 <br>
 
 Rota | Descrição
---- | :---:
-***GET*** ` http://localhost:3000/api/user ` | Lista todas as informações dos usuários - [ver JSON](#get---response)
-***POST*** ` http://localhost:3000/api/new/user ` | Adiciona um novo usuário - [ver JSON](#post---request)
-***PUT*** ` http://localhost:3000/api/update/user ` | Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
-***DELETE*** ` http://localhost:3000/api/delete/user ` | Deleta um usuário - [ver JSON](#delete---request)
+---|:---:|
+***GET*** ` http://localhost:3000/api/user `| Lista todas as informações dos usuários - [ver JSON](#get---response)
+***POST*** ` http://localhost:3000/api/new/user `| Adiciona um novo usuário - [ver JSON](#post---request)
+***PUT*** ` http://localhost:3000/api/update/user `| Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
+***DELETE*** ` http://localhost:3000/api/delete/user `| Deleta um usuário - [ver JSON](#delete---request)
 
 <br>
 
