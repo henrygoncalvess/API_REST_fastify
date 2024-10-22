@@ -151,9 +151,12 @@ Rota | Descrição
 }
 ```
 
-Response | CODE
-:---: | :---:
-*http status* | **`201 CREATED`**
+Response
+
+``` console
+# console
+new user: "newUsername"
+```
 
 <br>
 
@@ -161,14 +164,18 @@ Response | CODE
 
 ``` json
 {
-  "username": "pedro",
+  "currentUser": "pedro",
   "newUsername": "pedro-junior"
 }
 ```
 
-Response | CODE
-:---: | :---:
-*http status* | **`200 OK`**
+Response
+
+``` console
+# console
+before: "pedro"
+after: "pedro-junior"
+```
 
 <br>
 
@@ -179,6 +186,9 @@ Response | CODE
   "deleteUser": "pedro-junior"
 }
 ```
-Response | CODE
-:---: | :---:
-*http status* | **`200 OK`**
+Response
+
+``` console
+# console
+deleted user: "pedro-junior"
+```
