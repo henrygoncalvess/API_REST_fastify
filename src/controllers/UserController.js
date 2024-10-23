@@ -4,25 +4,25 @@ class UserController{
     index(req, res){
         const response = UserModel.findAll()
 
-        res.json(response)
+        res.status(200).json(response)
     }
 
     new(req, res){
         UserModel.create(req.body)
 
-        res.sendStatus(201)
+        res.status(201)
     }
 
     update(req, res){
         UserModel.update(req.body)
 
-        res.sendStatus(200)
+        res.status(200)
     }
 
     remove(req, res){
         UserModel.delete(req.body)
 
-        res.sendStatus(200)
+        res.status(200)
     }
 }
 
