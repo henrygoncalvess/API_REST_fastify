@@ -44,7 +44,7 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 ### Clonando Repositório
 No Terminal, certifique de que você está na pasta onde vai ficar o repositório
 
-`pasta\do\repo\clonado`
+`repositorios\clonados`
 ``` bash
 git clone https://github.com/henrygoncalvess/API_RESTful.git
 ```
@@ -71,13 +71,13 @@ Para fazer requisições e testar as respostas da API:
 
 comece criando seu projeto Node.js
 
-`pasta\do\repo\clonado\API_RESTful`
+`repositorios\clonados\API_RESTful`
 ``` bash
 npm init
 ```
 em seguida, instale o framework **Express** e o middleware **Cors**.
 
-`pasta\do\repo\clonado\API_RESTful`
+`repositorios\clonados\API_RESTful`
 ``` bash
 npm install express@4.21.1 cors@2.8.5
 ```
@@ -90,7 +90,7 @@ Antes de fazer requisições para a API, inicie o servidor local.
 
 no Terminal, dentro da pasta que contém o arquivo "**server.js**":
 
-`pasta\do\repo\clonado\API_RESTful\src`
+`repositorios\clonados\API_RESTful\src`
 ``` bash
 node server.js
 ```
