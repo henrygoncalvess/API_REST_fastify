@@ -22,9 +22,10 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 
 <br>
 
-### Estrutura de pastas
-
 ``` mermaid
+---
+title:  Estrutura de pastas
+---
 flowchart LR
     crud("📁 _API_RESTful_")@{ shape: processes }
     crud --o src("📁 _src_")@{ shape: processes }
@@ -38,17 +39,14 @@ flowchart LR
     routes --- Users.js("📄 **Users.js**")@{ shape: card }
     src --- app.js("📄 **app.js**")@{ shape: card }
     src --- server.js("📄 **server.js**")@{ shape: card }
-    env("⚙️ .env")
 
     %%CLASSES
     classDef default fill:#191919,color:white;
     
     classDef pasta fill:#403211,stroke:#c99e34,stroke-width:2px,color:#fff1cc;
-    classDef envStyle fill:#000000,stroke:#000000,color:gray;
 
     %%aplicação de classes
     class crud,src,config,controllers,models,routes pasta
-    class env envStyle
 
 
 
