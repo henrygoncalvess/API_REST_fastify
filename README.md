@@ -26,18 +26,39 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 
 ``` mermaid
 flowchart LR
-    root("📁 API_RESTful")
-    root === src("📁 src")
-    src === config("📁 config")
-    config --- db.js("📄 db.js")
-    src === controllers("📁 controllers")
-    controllers --- UserController.js("📄 UserController.js")
-    src === models("📁 models")
-    models --- UserModel.js("📄 UserModel.js")
-    src === routes("📁 routes")
-    routes --- Users.js("📄 Users.js")
-    src --- app.js("📄 app.js")
-    src --- server.js("📄 server.js")
+    crud("📁 _API_RESTful_")@{ shape: processes }
+    crud --o src("📁 _src_")@{ shape: processes }
+    src --o config("📁 _config_")@{ shape: processes }
+    config --- db.js("📄 **db.js**")@{ shape: card }
+    src --o controllers("📁 _controllers_")@{ shape: processes }
+    controllers --- UserController.js("📄 **UserController.js**")@{ shape: card }
+    src --o models("📁 _models_")@{ shape: processes }
+    models --- UserModel.js("📄 **UserModel.js**")@{ shape: card }
+    src --o routes("📁 _routes_")@{ shape: processes }
+    routes --- Users.js("📄 **Users.js**")@{ shape: card }
+    src --- app.js("📄 **app.js**")@{ shape: card }
+    src --- server.js("📄 **server.js**")@{ shape: card }
+    env("⚙️ .env")
+
+    %%CLASSES
+    classDef default fill:#191919,color:white;
+    
+    classDef pasta fill:#403211,stroke:#c99e34,stroke-width:2px,color:#fff1cc;
+    classDef envStyle fill:#000000,stroke:#000000,color:gray;
+
+    %%aplicação de classes
+    class crud,src,config,controllers,models,routes pasta
+    class env envStyle
+
+
+
+    %%LINKS
+    
+    %%pastas
+    linkStyle 0,1,3,5,7 stroke:#f2c04b
+
+    %%arquivos
+    linkStyle default stroke-width:2px;
 
     click src "https://github.com/henrygoncalvess/API_RESTful/tree/main/src"
     click config "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/config"
@@ -47,10 +68,9 @@ flowchart LR
     click models "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/models"
     click UserModel.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/models/UserModel.js"
     click routes "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/routes"
-    click Users.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/routes/Users.js"
+    click Users.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/routes/users.js"
     click app.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/app.js"
     click server.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/server.js"
-
 ```
 
 <br>
