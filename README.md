@@ -1,20 +1,20 @@
 # API REST
 
-Simples API feita com **Node.js** e **express** com aplicação de boas práticas para transferência de dados. O objetivo é apenas colocar meus conhecimentos em prática, para entender e utilizar os conceitos REST da melhor maneira possível.
+API que se auto-documenta de acordo com o código feita com **Node.js** e **Fastify** com aplicação de boas práticas para transferência de dados. O objetivo é apenas colocar meus conhecimentos em prática, para entender e utilizar os conceitos REST da melhor maneira possível.
 
 <br>
 
 **licença e tecnologias utilizadas**:  
-<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://expressjs.com/pt-br/"><img src="https://img.shields.io/badge/express-4.21.1-000000?style=for-the-badge&logo=express&logoColor=black&labelColor=gray"></a> <a href="https://www.npmjs.com/package/cors"><img src="https://img.shields.io/badge/cors-2.8.5-royalblue?style=for-the-badge&logo=cors&logoColor=black&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a> <a href="https://learning.postman.com/docs/introduction/overview/"><img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"></a>
+<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://fastify.dev/docs/latest/Guides/Getting-Started/"><img src="https://img.shields.io/badge/fastify-5.2.0-000000?style=for-the-badge&logo=fastify&logoColor=000000&labelColor=gray"></a> <a href="https://zod.dev/"><img src="https://img.shields.io/badge/zod-3.24.1-3E67B1?style=for-the-badge&logo=zod&logoColor=darkblue&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a>
 
 **Insalador de pacotes**:  
 <a href="https://docs.npmjs.com"><img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"></a>
 
 **Ponto de Entrada**:  
-<span><img src="https://img.shields.io/badge/server.js-333333?style=for-the-badge"></span>
+<span><img src="https://img.shields.io/badge/server.ts-333333?style=for-the-badge"></span>
 
 **Caminho**:  
-<span><img src="https://img.shields.io/badge/src/server.js-333333?style=for-the-badge"></span>
+<span><img src="https://img.shields.io/badge/src/server.ts-333333?style=for-the-badge"></span>
 
 <br>
 
@@ -24,7 +24,7 @@ Simples API feita com **Node.js** e **express** com aplicação de boas prática
 - [Instrução de instalação](#instrução-de-instalação)
   - [Pré-requisitos](#pré-requisitos)
   - [Clonando Repositório](#clonando-repositório)
-  - [Etapas](#etapas)
+  - [Configuração do Projeto](#configuração-do-projeto)
 - [Instrução de uso](#instrução-de-uso)
 - [API Endpoints](#api-endpoints)
   - [GET](#get---response)
@@ -116,19 +116,61 @@ git clone https://github.com/henrygoncalvess/API_RESTful.git
 
 <br>
 
-### Etapas
+### Configuração do Projeto
 
-comece criando seu projeto Node.js
+#### 1. Inicialize o projeto Node.js
 
 `repositorios\clonados\API_RESTful`
 ``` bash
 npm init
 ```
-em seguida, instale o framework **Express** e o middleware **Cors**.
+
+#### 2. Adicione os seguintes scripts ao package.json:
+
+`repositorios\clonados\CRUD_MySQL\package.json`
+``` json
+"scripts": {
+   "dev": "tsx --watch src/server.ts"
+}
+```
+
+#### 3. em seguida, instale as dependências necessárias para o funcionamento do projeto.
 
 `repositorios\clonados\API_RESTful`
 ``` bash
-npm install express@4.21.1 cors@2.8.5
+npm install fastify@5.2.0 fastify-type-provider-zod@4.0.2 @fastify/cors@10.0.1 zod@3.24.1
+npm install -D typescript@5.7.2 @types/node@22.10.2 tsx@4.19.2
+```
+
+#### 4. Inicialize o TypeScript e configure o arquivo `tsconfig.json`.
+
+`repositorios\clonados\CRUD_MySQL`
+``` bash
+npx tsc --init
+```
+
+#### 5. Atualize o `tsconfig.json` com as seguintes configurações básicas:
+_este padrão de arquivo typescript está de acordo com esta [documentação](https://github.com/tsconfig/bases)_  
+_baseado na versão node utilizada_
+
+`repositorios\clonados\CRUD_MySQL\tsconfig.json`
+``` json
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 22",
+  "_version": "22.0.0",
+
+  "compilerOptions": {
+    "lib": ["es2023"],
+    "module": "node16",
+    "target": "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16"
+  }
+}
 ```
 
 <br>
