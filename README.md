@@ -5,7 +5,7 @@ API que se auto-documenta de acordo com o código feita com **Node.js** e **Fast
 <br>
 
 **licença e tecnologias utilizadas**:  
-<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://fastify.dev/docs/latest/Guides/Getting-Started/"><img src="https://img.shields.io/badge/fastify-5.2.0-000000?style=for-the-badge&logo=fastify&logoColor=000000&labelColor=gray"></a> <a href="https://zod.dev/"><img src="https://img.shields.io/badge/zod-3.24.1-3E67B1?style=for-the-badge&logo=zod&logoColor=darkblue&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a>
+<img src="https://img.shields.io/github/license/henrygoncalvess/API_RESTful?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://fastify.dev/docs/latest/Guides/Getting-Started/"><img src="https://img.shields.io/badge/fastify-5.2.0-000000?style=for-the-badge&logo=fastify&logoColor=000000&labelColor=gray"></a> <a href="https://zod.dev/"><img src="https://img.shields.io/badge/zod-3.24.1-3E67B1?style=for-the-badge&logo=zod&logoColor=darkblue&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a> <a href="https://learning.postman.com/docs/introduction/overview/"><img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"></a>
 
 **Insalador de pacotes**:  
 <a href="https://docs.npmjs.com"><img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"></a>
@@ -27,10 +27,6 @@ API que se auto-documenta de acordo com o código feita com **Node.js** e **Fast
   - [Configuração do Projeto](#configuração-do-projeto)
 - [Instrução de uso](#instrução-de-uso)
 - [API Endpoints](#api-endpoints)
-  - [GET](#get---response)
-  - [POST](#post---request)
-  - [PUT](#put---request)
-  - [DELETE](#delete---request)
   
 </details>
 
@@ -138,7 +134,9 @@ npm init
 
 `repositorios\clonados\API_RESTful`
 ``` bash
-npm install fastify@5.2.0 fastify-type-provider-zod@4.0.2 @fastify/cors@10.0.1 zod@3.24.1
+npm install fastify@5.2.0 fastify-type-provider-zod@4.0.2 @fastify/cors@10.0.1 zod@3.24.1 @fastify/swagger@9.4.0 @fastify/swagger-ui@5.2.0
+```
+``` bash
 npm install -D typescript@5.7.2 @types/node@22.10.2 tsx@4.19.2
 ```
 
@@ -200,86 +198,3 @@ teste as respostas da API seguindo os **endpoints** abaixo.
 > [!note]
 > As respostas da API são apenas dados fictícios de um array, sem conexão com banco de dados,  
 > o objetivo é apenas entender o funcionamento da API e aplicar os princípios **REST**
-
-<br>
-
-Rota | Descrição
----|:---:|
-***GET*** ` http://localhost:3000/api/user `| Lista todas as informações dos usuários - [ver JSON](#get---response)
-***POST*** ` http://localhost:3000/api/new/user `| Adiciona um novo usuário - [ver JSON](#post---request)
-***PUT*** ` http://localhost:3000/api/update/user `| Altera/Atualiza o nome do usuário informado - [ver JSON](#put---request)
-***DELETE*** ` http://localhost:3000/api/delete/user `| Deleta um usuário - [ver JSON](#delete---request)
-
-<br>
-
-### GET - ***Response***
-
-``` json
-[
-    {
-        "username": "pedro",
-        "password": "111111"
-    },
-    {
-        "username": "maria",
-        "password": "22221"
-    },
-    {
-        "username": "marcelo",
-        "password": "321321"
-    }
-]
-```
-
-<br>
-
-### POST - ***Request***
-
-``` json
-{
-  "username": "newUsername",
-  "password": "newPassword"
-}
-```
-
-Response
-
-``` console
-# console
-new user: "newUsername"
-```
-
-<br>
-
-### PUT - ***Request***
-
-``` json
-{
-  "currentUser": "pedro",
-  "newUsername": "pedro-junior"
-}
-```
-
-Response
-
-``` console
-# console
-before: "pedro"
-after: "pedro-junior"
-```
-
-<br>
-
-### DELETE - ***Request***
-
-``` json
-{
-  "deleteUser": "pedro-junior"
-}
-```
-Response
-
-``` console
-# console
-deleted user: "pedro-junior"
-```
