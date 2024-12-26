@@ -3,6 +3,7 @@ import { fastifyCors } from '@fastify/cors';
 import { validatorCompiler, serializerCompiler } from 'fastify-type-provider-zod';
 import { fastifySwagger } from '@fastify/swagger';
 import { fastifySwaggerUi } from '@fastify/swagger-ui';
+import { routes } from './routes/users';
 
 const app = fastify();
 
@@ -22,6 +23,8 @@ app.register(fastifySwagger, {
 app.register(fastifySwaggerUi, {
     routePrefix: '/docs'
 })
+
+app.register(routes)
 
 app.listen({ port: 3000 }, () => {
     console.log('running...');
