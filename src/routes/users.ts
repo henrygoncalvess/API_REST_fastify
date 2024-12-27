@@ -6,7 +6,13 @@ export async function routes(app: FastifyTypedInstance) {
     app.get('/', {
         schema: {
             tags: ['users'],
-            description: 'List users'
+            description: 'List users',
+            response: {
+                200: z.array(z.object({
+                    name: z.string(),
+                    age: z.number()
+                }))
+            }
         }
     }, UserController.index)
 
@@ -17,7 +23,13 @@ export async function routes(app: FastifyTypedInstance) {
             body: z.object({
                 name: z.string(),
                 age: z.number()
-            })
+            }),
+            response: {
+                201: z.object({
+                    name: z.string(),
+                    age: z.number()
+                })
+            }
         }
     }, UserController.new)
 }

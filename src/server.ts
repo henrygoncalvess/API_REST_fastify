@@ -1,9 +1,9 @@
 import { fastify } from 'fastify';
 import { fastifyCors } from '@fastify/cors';
-import { validatorCompiler, serializerCompiler, ZodTypeProvider } from 'fastify-type-provider-zod';
-import { fastifySwagger } from '@fastify/swagger';
+import { validatorCompiler, serializerCompiler, ZodTypeProvider, jsonSchemaTransform } from 'fastify-type-provider-zod';
 import { fastifySwaggerUi } from '@fastify/swagger-ui';
 import { routes } from './routes/users';
+import { fastifySwagger } from '@fastify/swagger';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -15,9 +15,11 @@ app.setSerializerCompiler(serializerCompiler);
 app.register(fastifySwagger, {
     openapi: {
         info: {
-            title: "API auto-documentável"
+            title: "API auto-documentável",
+            version: '1.0.0'
         }
-    }
+    },
+    transform: jsonSchemaTransform
 });
 
 app.register(fastifySwaggerUi, {

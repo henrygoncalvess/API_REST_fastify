@@ -1,15 +1,13 @@
 import db from '../config/db';
+import { User } from '../types/usermodel';
 
 export class UserModel {
     static findAll(): Array<Object>{
         return db
     }
 
-    static create(name: string, age: number): {name: string, age: number}{
-        const newUser = {
-            name: name,
-            age: age
-        }
+    static create({ name, age }: User): User{
+        const newUser: User = { name, age }
 
         db.push(newUser)
 
