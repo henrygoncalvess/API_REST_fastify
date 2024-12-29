@@ -1,7 +1,7 @@
 import { UserModel } from "../models/UserModel";
 
 export class UserController {
-    static async index(request: any, reply: any): Promise<void>{
+    static async index(request, reply): Promise<void>{
         try{
             const response = await UserModel.findAll()
     
@@ -11,11 +11,21 @@ export class UserController {
         }
     }
 
-    static async new(request: any, reply: any): Promise<void>{
+    static async new(request, reply): Promise<void>{
         try{
             const newUser = await UserModel.create(request.body)
     
             reply.status(201).send(newUser)
+        }catch (error){
+            throw error
+        }
+    }
+
+    static async update(request, reply): Promise<void>{
+        try{
+            const userUpdate = await UserModel.update(request.body)
+    
+            reply.status(200).send(userUpdate)
         }catch (error){
             throw error
         }

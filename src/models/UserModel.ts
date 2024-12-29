@@ -13,4 +13,18 @@ export class UserModel {
 
         return newUser
     }
+
+    static update({ currentUsername, newUsername }: { currentUsername: string, newUsername: string }){
+        const userUpdate = db.findIndex(value => {
+            return value.name === currentUsername
+        })
+
+        if (userUpdate != -1){
+            db[userUpdate].name = newUsername
+
+            return { currentUsername, newUsername }
+        }
+
+        throw new Error(`user ${currentUsername} not found`)
+    }
 }

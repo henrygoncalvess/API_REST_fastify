@@ -32,4 +32,21 @@ export async function routes(app: FastifyTypedInstance) {
             }
         }
     }, UserController.new)
+
+    app.put('/users', {
+        schema: {
+            tags: ['users'],
+            description: 'Update a user',
+            body: z.object({
+                currentUsername: z.string(),
+                newUsername: z.string()
+            }),
+            response: {
+                200: z.object({
+                    currentUsername: z.string(),
+                    newUsername: z.string()
+                })
+            }
+        }
+    }, UserController.update)
 }
