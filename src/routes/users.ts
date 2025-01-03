@@ -49,4 +49,17 @@ export async function routes(app: FastifyTypedInstance) {
             }
         }
     }, UserController.update)
+
+    app.delete('/users', {
+        schema: {
+            tags: ['users'],
+            description: 'Delete a user',
+            body: z.object({
+                name: z.string()
+            }),
+            response: {
+                200: z.string()
+            }
+        }
+    }, UserController.remove)
 }

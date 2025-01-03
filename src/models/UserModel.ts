@@ -27,4 +27,18 @@ export class UserModel {
             return "user not found"
         }
     }
+
+    static delete({ name }: { name: string }){
+        const userExist = db.findIndex(value => {
+            return value.name === name
+        })
+
+        if (userExist != -1){
+            db.splice(userExist, 1)
+
+            return "user successfully deleted"
+        }else{
+            return "user not found"
+        }
+    }
 }
