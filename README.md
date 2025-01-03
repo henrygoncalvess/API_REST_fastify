@@ -5,7 +5,7 @@ API que se auto-documenta de acordo com o código feita com **Node.js** e **Fast
 <br>
 
 **licença e tecnologias utilizadas**:  
-<img src="https://img.shields.io/github/license/henrygoncalvess/API_REST_fastify?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://fastify.dev/docs/latest/Guides/Getting-Started/"><img src="https://img.shields.io/badge/fastify-5.2.0-000000?style=for-the-badge&logo=fastify&logoColor=000000&labelColor=gray"></a> <a href="https://zod.dev/"><img src="https://img.shields.io/badge/zod-3.24.1-3E67B1?style=for-the-badge&logo=zod&logoColor=darkblue&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a> <a href="https://learning.postman.com/docs/introduction/overview/"><img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"></a>
+<img src="https://img.shields.io/github/license/henrygoncalvess/API_REST_fastify?style=for-the-badge&labelColor=gray&color=97ca00"> <a href="https://fastify.dev/docs/latest/Guides/Getting-Started/"><img src="https://img.shields.io/badge/fastify-5.2.0-000000?style=for-the-badge&logo=fastify&logoColor=000000&labelColor=gray"></a> <a href="https://www.typescriptlang.org/docs/"><img src="https://img.shields.io/badge/typescript-5.7.2-3178C6?style=for-the-badge&logo=typescript&logoColor=3178C6&labelColor=gray"></a> <a href="https://zod.dev/"><img src="https://img.shields.io/badge/zod-3.24.1-3E67B1?style=for-the-badge&logo=zod&logoColor=darkblue&labelColor=gray"></a> <a href="https://nodejs.org/pt"><img src="https://img.shields.io/badge/node-20.16.0-5FA04E?style=for-the-badge&logo=node.js&logoColor=5FA04E&labelColor=gray"></a> <a href="https://learning.postman.com/docs/introduction/overview/"><img src="https://img.shields.io/badge/postman-11.16.0-FF6C37?style=for-the-badge&logo=postman&logoColor=FF6C37&labelColor=gray"></a>
 
 **Insalador de pacotes**:  
 <a href="https://docs.npmjs.com"><img src="https://img.shields.io/badge/npm-10.8.2-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837&labelColor=gray"></a>
@@ -116,14 +116,14 @@ git clone https://github.com/henrygoncalvess/API_RESTful.git
 
 #### 1. Inicialize o projeto Node.js
 
-`repositorios\clonados\API_RESTful`
+`repositorios\clonados\API_REST_fastify`
 ``` bash
 npm init
 ```
 
 #### 2. Adicione os seguintes scripts ao package.json:
 
-`repositorios\clonados\CRUD_MySQL\package.json`
+`repositorios\clonados\API_REST_fastify\package.json`
 ``` json
 "scripts": {
   "dev": "tsx --watch src/server.ts"
@@ -143,19 +143,16 @@ npm init
 }
 ```
 
-#### 3. em seguida, instale as dependências necessárias para o funcionamento do projeto.
+#### 3. com as dependências listadas em `package.json`, inicie a instalação.
 
-`repositorios\clonados\API_RESTful`
+`repositorios\clonados\API_REST_fastify`
 ``` bash
-npm install fastify@5.2.0 fastify-type-provider-zod@4.0.2 @fastify/cors@10.0.1 zod@3.24.1 @fastify/swagger@9.4.0 @fastify/swagger-ui@5.2.0
-```
-``` bash
-npm install -D typescript@5.7.2 @types/node@22.10.2 tsx@4.19.2
+npm install
 ```
 
 #### 4. Inicialize o TypeScript e configure o arquivo `tsconfig.json`.
 
-`repositorios\clonados\CRUD_MySQL`
+`repositorios\clonados\API_REST_fastify`
 ``` bash
 npx tsc --init
 ```
@@ -164,7 +161,7 @@ npx tsc --init
 _este padrão de arquivo typescript está de acordo com esta [documentação](https://github.com/tsconfig/bases)_  
 _baseado na versão node utilizada_
 
-`repositorios\clonados\CRUD_MySQL\tsconfig.json`
+`repositorios\clonados\API_REST_fastify\tsconfig.json`
 ``` json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -190,11 +187,9 @@ _baseado na versão node utilizada_
 
 Antes de fazer requisições para a API, inicie o servidor local.
 
-no Terminal, dentro da pasta que contém o arquivo "**server.js**":
-
-`repositorios\clonados\API_RESTful\src`
+`repositorios\clonados\API_REST_fastify`
 ``` bash
-node server.js
+npm run dev
 ```
 
 <br>
@@ -211,3 +206,9 @@ teste as respostas da API seguindo os **endpoints** abaixo.
 > [!note]
 > As respostas da API são apenas dados fictícios de um array, sem conexão com banco de dados,  
 > o objetivo é apenas entender o funcionamento da API e aplicar os princípios **REST**
+
+#### em seu navegador, acesse [`http://localhost:3000/docs`](http://localhost:3000/docs) para acessar a documentação das rotas
+
+`PRÉVIA`:
+
+![preview (2)](https://github.com/user-attachments/assets/9bda3aa6-19e4-45bb-8784-06bc539885ad)
