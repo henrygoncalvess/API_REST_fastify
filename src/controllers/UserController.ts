@@ -7,6 +7,7 @@ export class UserController {
     
             reply.status(200).send(response)
         }catch (error){
+            reply.status(400)
             throw error
         }
     }
@@ -17,6 +18,7 @@ export class UserController {
     
             reply.status(201).send(newUser)
         }catch (error){
+            reply.status(400)
             throw error
         }
     }
@@ -27,6 +29,7 @@ export class UserController {
     
             reply.status(200).send(userUpdate)
         }catch (error){
+            reply.status(400)
             throw error
         }
     }
