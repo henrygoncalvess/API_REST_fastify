@@ -89,12 +89,12 @@ flowchart LR
 Para a instalação dos frameworks, middlewares e dependências que possibilitaram a criação da API  
 é necessário que você possua as seguintes ferramentas:
 
-- **Node.js** - [Tutorial de instalação](https://nodejs.org/pt)
+- <img src="https://cdn.simpleicons.org/nodedotjs/5FA04E/5FA04E?viewbox=auto" width=24>&nbsp; **Node.js** - [Tutorial de instalação](https://nodejs.org/pt)
 
-- **npm** - [Tutorial de instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- <img src="https://cdn.simpleicons.org/npm/CB3837/CB3837?viewbox=auto" width=24>&nbsp; **npm** - [Tutorial de instalação](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 Para fazer requisições e testar as respostas da API:
-- **Postman** - [Tutorial de instalação](https://www.postman.com/downloads/)
+- <img src="https://cdn.simpleicons.org/postman/FF6C37/FF6C37?viewbox=auto" width=24>&nbsp; **Postman** - [Tutorial de instalação](https://www.postman.com/downloads/)
 
 > [!tip]
 > Também é possível fazer requisições pela linha de comando.  
@@ -126,7 +126,20 @@ npm init
 `repositorios\clonados\CRUD_MySQL\package.json`
 ``` json
 "scripts": {
-   "dev": "tsx --watch src/server.ts"
+  "dev": "tsx --watch src/server.ts"
+},
+"dependencies": {
+  "fastify": "5.2.0",
+  "fastify-type-provider-zod": "4.0.2",
+  "@fastify/cors": "10.0.1",
+  "zod": "3.24.1",
+  "@fastify/swagger": "9.4.0",
+  "@fastify/swagger-ui": "5.2.0"
+},
+"devDependencies": {
+  "typescript": "5.7.2",
+  "@types/node": "22.10.2",
+  "tsx": "4.19.2"
 }
 ```
 
