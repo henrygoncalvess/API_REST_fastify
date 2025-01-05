@@ -121,7 +121,7 @@ git clone https://github.com/henrygoncalvess/API_RESTful.git
 npm init
 ```
 
-#### 2. Adicione os seguintes scripts ao package.json:
+#### 2. Adicione o seguinte código ao package.json:
 
 `repositorios\clonados\API_REST_fastify\package.json`
 ``` json
