@@ -1,7 +1,6 @@
 import { fastify } from 'fastify';
 import { fastifyCors } from '@fastify/cors';
 import { validatorCompiler, serializerCompiler, ZodTypeProvider, jsonSchemaTransform } from 'fastify-type-provider-zod';
-import { fastifySwaggerUi } from '@fastify/swagger-ui';
 import { routes } from './routes/users';
 import { fastifySwagger } from '@fastify/swagger';
 
@@ -30,8 +29,16 @@ class App {
             transform: jsonSchemaTransform
         });
 
-        this.fastify.register(fastifySwaggerUi, {
-            routePrefix: '/docs'
+        this.fastify.register(import("@scalar/fastify-api-reference"), {
+            routePrefix: '/docs',
+            configuration: {
+                hideDownloadButton: true,
+                forceDarkModeState: 'dark',
+                defaultHttpClient: {
+                    targetKey: 'js',
+                    clientKey: 'fetch',
+                }
+            }
         });
         
         this.fastify.register(routes);

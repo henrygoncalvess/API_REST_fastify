@@ -134,7 +134,7 @@ npm init
   "@fastify/cors": "10.0.1",
   "zod": "3.24.1",
   "@fastify/swagger": "9.4.0",
-  "@fastify/swagger-ui": "5.2.0"
+  "@scalar/fastify-api-reference": "1.25.100"
 },
 "devDependencies": {
   "typescript": "5.7.2",
@@ -211,4 +211,4 @@ teste as respostas da API seguindo os **endpoints** abaixo.
 
 `PRÉVIA`:
 
-![preview (2)](https://github.com/user-attachments/assets/9bda3aa6-19e4-45bb-8784-06bc539885ad)
+![scalar-docs](https://github.com/user-attachments/assets/2fa5cc32-381a-4dee-872d-adf4cea66bcf)
