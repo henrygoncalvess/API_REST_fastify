@@ -37,18 +37,21 @@ API que se auto-documenta de acordo com o código feita com **Node.js** e **Fast
 title:  Estrutura de pastas
 ---
 flowchart LR
-    crud("📁 _API_RESTful_")@{ shape: processes }
+    crud("📁 _API_REST_fastify_")@{ shape: processes }
     crud --o src("📁 _src_")@{ shape: processes }
     src --o config("📁 _config_")@{ shape: processes }
-    config --- db.js("📄 **db.js**")@{ shape: card }
+    config --- db.ts("📄 **db.ts**")@{ shape: card }
     src --o controllers("📁 _controllers_")@{ shape: processes }
-    controllers --- UserController.js("📄 **UserController.js**")@{ shape: card }
+    controllers --- UserController.ts("📄 **UserController.ts**")@{ shape: card }
     src --o models("📁 _models_")@{ shape: processes }
-    models --- UserModel.js("📄 **UserModel.js**")@{ shape: card }
+    models --- UserModel.ts("📄 **UserModel.ts**")@{ shape: card }
     src --o routes("📁 _routes_")@{ shape: processes }
-    routes --- Users.js("📄 **Users.js**")@{ shape: card }
-    src --- app.js("📄 **app.js**")@{ shape: card }
-    src --- server.js("📄 **server.js**")@{ shape: card }
+    routes --- Users.ts("📄 **Users.ts**")@{ shape: card }
+    src --o types("📁 _types_")@{ shape: processes }
+    types --- fastify.ts("📄 **fastify.ts**")@{ shape: card }
+    types --- usermodel.ts("📄 **usermodel.ts**")@{ shape: card }
+    src --- app.ts("📄 **app.ts**")@{ shape: card }
+    src --- server.ts("📄 **server.ts**")@{ shape: card }
 
     %%CLASSES
     classDef default fill:#191919,color:white;
@@ -56,7 +59,7 @@ flowchart LR
     classDef pasta fill:#403211,stroke:#c99e34,stroke-width:2px,color:#fff1cc;
 
     %%aplicação de classes
-    class crud,src,config,controllers,models,routes pasta
+    class crud,src,config,controllers,models,routes,types pasta
 
 
 
@@ -68,17 +71,20 @@ flowchart LR
     %%arquivos
     linkStyle default stroke-width:2px;
 
-    click src "https://github.com/henrygoncalvess/API_RESTful/tree/main/src"
-    click config "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/config"
-    click db.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/config/db.js"
-    click controllers "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/controllers"
-    click UserController.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/controllers/UserController.js"
-    click models "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/models"
-    click UserModel.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/models/UserModel.js"
-    click routes "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/routes"
-    click Users.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/routes/users.js"
-    click app.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/app.js"
-    click server.js "https://github.com/henrygoncalvess/API_RESTful/tree/main/src/server.js"
+    click src "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src"
+    click config "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/config"
+    click db.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/config/db.ts"
+    click controllers "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/controllers"
+    click UserController.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/controllers/UserController.ts"
+    click models "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/models"
+    click UserModel.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/models/UserModel.ts"
+    click routes "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/routes"
+    click Users.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/routes/users.ts"
+    click types "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/types"
+    click fastify.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/types/fastify.ts"
+    click usermodel.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/types/usermodel.ts"
+    click app.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/app.ts"
+    click server.ts "https://github.com/henrygoncalvess/API_REST_fastify/tree/main/src/server.ts"
 ```
 
 <br>
